@@ -1,19 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import RecoverAccount from "./components/RecoverAccount";
-import LoginPage from "./components/LogInPage";
-import SignupPage from "./components/SignUpPage";
+import { Router, Routes, Route } from "react-router-dom";
+import RecoverAccount from "./pages/RecoverAccount";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignUpPage";
+import Home from "./pages/Home";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
-    <Router>
+    <div>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/recover-account" element={<RecoverAccount />} />
         <Route path="/signup" element={<SignupPage />} />{" "}
+        <Route path="/home" element={<Home />} />
         {/* Add SignupPage route */}
       </Routes>
-    </Router>
+    </div>
   );
 };
 
